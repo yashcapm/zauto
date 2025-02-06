@@ -1,0 +1,15 @@
+unmanaged implementation in class zbp_r_auto_um unique;
+strict ( 2 );
+
+define behavior for ZR_AUTO_UM //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Salesorder, Salesorderitem;
+  action ( features : instance ) AutoPost result [1] $self;
+}

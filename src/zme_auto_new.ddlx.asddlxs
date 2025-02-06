@@ -1,0 +1,65 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+  typeName: 'Total Records',
+  typeNamePlural: 'Total Records'
+  }
+annotate entity ZI_AUTO_NEW with
+{
+  @UI.facet: [{ id : 'InvoiceMaster',
+   purpose: #STANDARD,
+   type: #IDENTIFICATION_REFERENCE,
+   label: 'Master Data',
+   position: 10 }]
+
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 10 }]
+
+  Salesorder;
+  @UI.lineItem: [{ position: 20 }]
+
+  Salesorderitem;
+  //@UI.lineItem: [{ position: 30 }]
+
+  //SoldToPartyName;
+  @UI.lineItem: [{ position: 40 }]
+  CustomerName;
+  @UI.lineItem: [{ position: 50 }]
+  MaterialText;
+  @UI.lineItem: [{ position: 60 }]
+  Plant;
+  @UI.lineItem: [{ position: 70 }]
+  OrderedQuantity;
+  @UI.lineItem: [{ position: 80 }]
+  CustomerPriceGroup;
+  @UI.lineItem: [{ position: 90 }]
+  CustomerPriceGroupName;
+  
+  @UI.lineItem: [{ position: 100 },
+  { type: #FOR_ACTION, label: 'Relese SO', dataAction: 'AutoPost', invocationGrouping: #CHANGE_SET}]
+  
+  //    ebeln;
+  PoStatus;
+  
+  @UI.lineItem: [{ position: 120 },
+   { type: #FOR_ACTION, label: 'Create Invoice', dataAction: 'GrnPost', invocationGrouping: #CHANGE_SET  }]
+  grnStatus;
+  @UI.lineItem: [{ position: 130 },
+  { type: #FOR_ACTION, label: 'Relese  Invoice', dataAction: 'InvPost', invocationGrouping: #CHANGE_SET  }]
+  BillingDocument;
+  @UI.lineItem: [{ position: 140 }]
+  BillingDocumentItem;
+  @UI.lineItem: [{ position: 150 }]
+  Study_Id;
+  @UI.lineItem: [{ position: 160 }]
+  SalesOrderDate;
+  @UI.lineItem: [{ position: 161 }]
+  ebeln;
+  @UI.lineItem: [{ position: 162 }]
+  mblnr;
+  @UI.lineItem: [{ position: 163 }]
+  vbeln;
+  
+  //     @UI.lineItem: [{ position: 90 }]
+  //    ;
+
+}

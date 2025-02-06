@@ -1,0 +1,4 @@
+@EndUserText.label: 'Automation SD'
+define service ZSD_AUTO_NEW {
+  expose ZI_AUTO_NEW as Auto;
+}

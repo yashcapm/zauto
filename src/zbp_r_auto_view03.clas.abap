@@ -1,0 +1,13 @@
+CLASS zbp_r_auto_view03 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_auto_view.
+PUBLIC SECTION.
+    CLASS-DATA mapped_purchase_order TYPE RESPONSE FOR MAPPED i_purchaseordertp_2.
+    CLASS-DATA mapped_material_document TYPE RESPONSE FOR MAPPED i_materialdocumenttp.
+*    CLASS-DATA mapped_miro TYPE RESPONSE FOR MAPPED i_supplierinvoicetp.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZBP_R_AUTO_VIEW03 IMPLEMENTATION.
+ENDCLASS.

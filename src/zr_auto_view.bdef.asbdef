@@ -1,0 +1,30 @@
+managed implementation in class zbp_r_auto_view unique;
+strict ( 2 );
+
+define behavior for ZR_AUTO_VIEW //alias <alias_name>
+with unmanaged save
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Salesorder, Salesorderitem;
+//  field ( numbering : managed, readonly ) uuid;
+  action ( features : instance ) GetData result [1] $self;
+  action ( features : instance ) AutoPost result [1] $self;
+  action ( features : instance ) GrnPost result [1] $self;
+  action ( features : instance ) InvPost result [1] $self;
+
+  validation ValidateSo on save { create; field Salesorder;}
+
+  mapping for ztt_salesorder_n
+  { Salesorder = salesorder;
+    Salesorderitem = salesorderitem;
+
+  }
+
+
+}

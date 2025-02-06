@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD for auto'
+define service ZSD_AUTO_UN {
+  expose ZR_AUTO_UM as Auto;
+}
